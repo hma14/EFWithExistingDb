@@ -1,0 +1,31 @@
+﻿<div class="container-fluid" ng-app="northwindApp" ng-controller="productController" ng-init="init()"> 
+    <br />
+    <div class="row col-lg-4 text-info">
+        Search: <input ng-model="query" type="text" class="form-control form-group" />
+    </div>
+    <div class="row">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th><a href="" ng-click="sortField='ProductID';reverse=!reverse">Product ID</a></th>
+                    <th><a href="" ng-click="sortField='ProductName';reverse=!reverse">Product Name</a></th>
+                    <th><a href="" ng-click="sortField='UnitPrice';reverse=!reverse">Unit Price</a></th>
+                    <th><a href="" ng-click="sortField='Discontinued';reverse=!reverse">Discontinued</a></th>
+                    <th><a href="" ng-click="sortField='CategoryName';reverse=!reverse">Category Name</a></th>
+                    <th><a href="" ng-click="sortField='Description';reverse=!reverse">Category Description</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in products | filter:query | orderBy:sortField:reverse">
+                    <td>{{p.ProductID}}</td>
+                    <td>{{p.ProductName}}</td>
+                    <td>{{p.UnitPrice}}</td>
+                    <td>{{p.Discontinued}}</td>
+                    <td ng-show="p.CategoryID"><a href="#/categoryDetail" class="linkButton" ng-click="getCategory(p)" >{{p.CategoryName}}</a></td>
+                    <td ng-show="p.CategoryID == null">{{p.CategoryName}}</td>
+                    <td>{{p.Description}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

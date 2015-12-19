@@ -1,0 +1,21 @@
+﻿<div class="row" ng-app="northwindApp" ng-controller="categoryController">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th><a href="" ng-click="sortField='CategoryID';reverse=!reverse">Category ID</a></th>
+                <th><a href="" ng-click="sortField='CategoryName';reverse=!reverse">Category Name</a></th>
+                <th><a href="" ng-click="sortField='Description';reverse=!reverse">Category Description</a></th>
+                <th><a href="" ng-click="sortField='Picture';reverse=!reverse">Picture</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{category.CategoryID}}</td>
+                <td>{{category.CategoryName}}</td>
+                <td>{{category.Description}}</td>
+                <td><img ng-src="data:image/jpeg;base64,{{category.Picture}}" class="LargeImage img-rounded img-responsive"/></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,28 @@
+﻿<div class="row" ng-app="northwindApp" ng-controller="categoryController" ng-init="init()">
+    <br />
+    <div class="row col-lg-4 text-info">
+        Search: <input ng-model="query" type="text" class="form-control form-group" />
+    </div>
+    <div class="row">
+        <table class="table table-responsive">
+
+            <thead>
+                <tr>
+                    <th><a href="" ng-click="sortField='CategoryID';reverse=!reverse">Category ID</a></th>
+                    <th><a href="" ng-click="sortField='CategoryName';reverse=!reverse">Category Name</a></th>
+                    <th><a href="" ng-click="sortField='Description';reverse=!reverse">Category Description</a></th>
+                    <th><a href="" ng-click="sortField='Picture';reverse=!reverse">Picture</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="c in categories | filter:query | orderBy:sortField:reverse">
+                    <td>{{c.CategoryID}}</td>
+                    <td>{{c.CategoryName}}</td>
+                    <td>{{c.Description}}</td>
+                    <td><img ng-src="data:image/jpeg;base64,{{c.Picture}}" class="img-rounded img-responsive"/></td>
+                    <!--<td><img ng-src="{{c.Picture}}" class="LargeImage img-rounded img-responsive" /></td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
