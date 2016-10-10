@@ -21,7 +21,7 @@
                     <td>{{p.ProductName}}</td>
                     <td>{{p.UnitPrice}}</td>
                     <td>{{p.Discontinued}}</td>
-                    <td ng-show="p.CategoryID"><a href="#/categoryDetail" class="linkButton" ng-click="getCategory(p)" >{{p.CategoryName}}</a></td>
+                    <td ng-show="p.CategoryID"><a href="categoryDetail" class="linkButton" ng-click="getCategory(p)" >{{p.CategoryName}}</a></td>
                     <td ng-show="p.CategoryID == null">{{p.CategoryName}}</td>
                     <td>{{p.Description}}</td>
                 </tr>

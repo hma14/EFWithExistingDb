@@ -3,7 +3,7 @@
 var northwindApp = angular.module('northwindApp', ['ngRoute', 'apiServices']);
 
 
-northwindApp.config(function ($routeProvider) {
+northwindApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider.
     when('/',
     {
@@ -27,7 +27,8 @@ northwindApp.config(function ($routeProvider) {
     }).
     otherwise({
         redirectTo: '/'
-    });
+    })
+    $locationProvider.html5Mode(true);
 });
 
 northwindApp.factory('$exceptionHandler', function ($injector) {
